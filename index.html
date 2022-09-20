@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Table</title>
+</head>
+<body>
+    
+    <h1>Multiplication Table</h1>
+
+    <form onsubmit="printTable(); return false">
+        Table: <input type="text" id="num" required>
+        <br>
+        Range: <input type="text" id="range" required value="20">
+
+        <br>
+        <button type="submit">Result</button>
+    </form>
+
+    <div class="container">
+        <h2 id="result"> </h2>
+    </div>
+
+    <script>
+        function printTable() {
+            let num = +document.querySelector("#num").value;
+            let range = +document.querySelector("#range").value;
+
+            let result = document.querySelector("#result");
+            result.innerHTML = "";
+
+            for (let i = 0; i < range; i++) {
+
+                let count = i + 1
+                
+                console.log(`${num} x ${count} = ${num * count}`);
+                result.innerHTML += `${num} x ${count} = ${num * count} <br>`
+            }
+        }
+    </script>
+
+
+</body>
+</html>
